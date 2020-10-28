@@ -1,0 +1,111 @@
+html {
+    background-color: #1d2d50;
+}
+
+body {
+    font-family: 'Padauk', sans-serif;
+    font-weight: 400;
+}
+
+.menu-side-active {
+    &:before {
+        position: absolute;
+        content: '';
+        right: 0;
+        top: 50%;
+        width: 6px;
+        height: 6px;
+        background:#fcdab7;
+        margin-top: -3px;
+        border-radius: 50%;
+    }
+}
+
+label {
+    &.form-check-box-label {
+        display: block;
+        position: relative;
+        padding-left: 40px;
+        margin-bottom: 0;
+        height: 30px;
+        line-height: 25px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 30px;
+            width: 30px;
+            background-color: #1d2d50;
+            border-radius: 50%;
+        }
+
+        &:hover input ~ .checkmark {
+            background-color: #1e5f74;
+        }
+
+        input:checked ~ .checkmark {
+            background-color: #1e5f74;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        .checkmark:after {
+            top: 5px;
+            left: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fcdab7;
+        }
+    }
+
+}
+
+.profileFile,
+.productFile {
+    [type="file"] {
+        height: 0;
+        overflow: hidden;
+        width: 0;
+    }
+}
+
+
+#notiBar {
+    z-index: 99999;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    transform: rotateY(180deg);
+    transform-origin: right;
+    transition: 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+
+    .btn {
+        position: absolute;
+        right: 1.2rem;
+        top: 1rem;
+    }     
+}
